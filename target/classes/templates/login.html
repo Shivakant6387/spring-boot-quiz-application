@@ -21,7 +21,7 @@
     <img th:src="@{/images/exam.svg}" alt="image">
   </div>
   <div class="text-box">
-    <h1 class="mb-5 text-center">Sign Up</h1>
+    <h1 class="mb-5 text-center">Sign In</h1>
     <form class="card bg-dark py-5 px-4" action="/quiz" method="POST" onsubmit="return validateForm()">
       <p>Enter Your Name</p>
       <input type="text" name="username" required />
@@ -30,7 +30,7 @@
       <p>Confirm Password</p>
       <input type="password" name="confirmPassword" id="confirmPassword" required />
       <p class="text-danger warning" id="passwordError"></p>
-      <button type="submit" class="btn btn-warning">Sign Up</button>
+      <button type="submit" class="btn btn-warning">Sign In</button>
     </form>
   </div>
 </div>

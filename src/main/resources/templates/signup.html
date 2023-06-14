@@ -24,9 +24,9 @@
         <h1 class="mb-5 text-center">Sign Up</h1>
         <form class="card bg-dark py-5 px-4" action="/" method="POST">
             <p>Enter Your Name</p>
-            <input type="text" name="username" />
+            <input type="text" name="username"  required/>
             <p>Enter Your Password</p>
-            <input type="text" name="userPassword" />
+            <input type="text" name="userPassword"  required/>
             <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
             <button type="submit" class="btn btn-warning">Sign Up</button>
         </form>
