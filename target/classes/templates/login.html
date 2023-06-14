@@ -21,14 +21,16 @@
     <img th:src="@{/images/exam.svg}" alt="image">
   </div>
   <div class="text-box">
-    <h1 class="mb-5 text-center">Spring Boot Quiz App</h1>
-    <form class="card bg-dark py-5 px-4" action="/start" method="GET">
+    <h1 class="mb-5 text-center">Sign Up</h1>
+    <form class="card bg-dark py-5 px-4" action="/quiz" method="POST" onsubmit="return validateForm()">
       <p>Enter Your Name</p>
-      <input type="text" name="username" />
+      <input type="text" name="username" required />
       <p>Enter Your Password</p>
-      <input type="text" name="userPassword" />
-      <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
-      <button type="submit" class="btn btn-warning">Login</button>
+      <input type="password" name="userPassword" id="password" required />
+      <p>Confirm Password</p>
+      <input type="password" name="confirmPassword" id="confirmPassword" required />
+      <p class="text-danger warning" id="passwordError"></p>
+      <button type="submit" class="btn btn-warning">Sign Up</button>
     </form>
   </div>
 </div>
@@ -38,5 +40,20 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript validation -->
+<script>
+  function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      document.getElementById("passwordError").textContent = "Passwords do not match.";
+      return false;
+    }
+
+    return true;
+  }
+</script>
 </body>
 </html>
