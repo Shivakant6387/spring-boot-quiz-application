@@ -28,10 +28,14 @@ public class MainController {
 	public Result getResult() {
 		return result;
 	}
-	
+
 	@GetMapping("/")
 	public String home() {
 		return "index.html";
+	}
+	@GetMapping("/start")
+	public String startQuiz(){
+		return "quizStart.html";
 	}
 	
 	@PostMapping("/quiz")
