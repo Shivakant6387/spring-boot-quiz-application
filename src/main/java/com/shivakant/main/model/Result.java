@@ -16,7 +16,20 @@ public class Result {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String username;
+	private String userPassword;
 	private int totalCorrect = 0;
+
+	public Result(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
 
 	public Result() {
 		super();

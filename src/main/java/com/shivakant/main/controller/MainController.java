@@ -68,5 +68,8 @@ public class MainController {
 		
 		return "scoreboard.html";
 	}
-
+	@GetMapping("/login")
+	public String login(Model m) {
+		return "login.html";
+	}
 }
